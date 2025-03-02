@@ -1,4 +1,20 @@
-node_modules
+# Node modules (big files, unnecessary in GitHub)
+node_modules/
+
+# Environment variables (contains secrets like MongoDB URI, JWT secrets)
 .env
+
+# Logs and debug files
 logs/
 *.log
+
+# OS-related files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Build files (if applicable)
+dist/

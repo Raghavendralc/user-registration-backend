@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require("./routes/user.routes")
 
-
+require('dotenv').config();
 
 const app= express();
 
@@ -11,9 +11,10 @@ app.use(cors());
 app.use(express.json());
 
 
-mongoose.connect('mongodb+srv://raghavendrachitragar27:Raghavlc*4@cluster0.krlrp.mongodb.net/user-registration?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
+ 
 
   app.use("/api",userRoutes);
 
