@@ -8,7 +8,12 @@ require('dotenv').config();
 const app= express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://user-registration-3sjvnj4b6-raghavendralcs-projects.vercel.app'],
+  origin: [
+    'http://localhost:3000',
+    'https://user-registration-raghavendralcs-projects.vercel.app'
+  ],
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 app.use(express.json());
